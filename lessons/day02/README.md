@@ -77,3 +77,9 @@ terraform {
 
 ## Next Steps
 Proceed to Day 3 to learn about creating your first AWS resources with Terraform and check task.md for your assignments.
+
+
+## Blog Link
+
+https://awsterraform30days.hashnode.dev/preview/692872058917564b2df2af50
+
