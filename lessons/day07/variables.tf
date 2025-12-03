@@ -1,4 +1,4 @@
-# String type
+/* # String type
 variable "environment" {
     type = string
     description = "the environment type"
@@ -120,3 +120,11 @@ variable "server_config" {
     # - All attributes must be provided (unless optional)
 }
 
+ */
+
+ variable "bucket_name" {
+    description = "the name of the s3 bucket"
+    type = list(string)
+    default = ["tf-day07-bucket-a-20251203", "tf-day07-bucket-b-20251203"]
+ }
+ 

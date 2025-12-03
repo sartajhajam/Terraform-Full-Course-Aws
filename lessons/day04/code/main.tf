@@ -10,15 +10,15 @@ terraform {
 
 provider "aws" {
   # Configuration options
-    region = "ca-central-1"
+    region = "ap-south-1" #Mumbai ,India
 }
 
 # backend configuration
 terraform {
   backend "s3" {
-    bucket         = "erraform-state-1754513244"
+    bucket         = "terraform-state-1754513244-state"
     key            = "dev/terraform.tfstate"
-    region         = "ca-central-1"
+    region         = "ap-south-1" #Mumbai ,India
     use_lockfile  = "true"
     encrypt        = true
   }
@@ -40,3 +40,20 @@ resource "random_string" "bucket_suffix" {
   special = false
   upper   = false
 }
+
+// define a variable in 
+variable "environment"{
+  default = "dev"
+  type = string
+}
+
+//use the variable in terraform 
+
+  resource "aws_vpc""sample"{
+    cidr_block = "10.0.0.0/16"
+    tags = {
+      Name = "sample-vpc-${var.environment}" // accessing the variable 
+    }
+  }
+
+
